@@ -7,7 +7,7 @@ body {
     max-width: 70%;
     background-color: FFFFFF;
     border-radius: 20px;
-    padding: 80px 94px;
+    padding: 70px 94px;
     margin: 0px 30px;
     border: 1px solid rgba(128, 128, 128, 0.541);
     box-shadow: 8px 8px 10px #40DE63 ;
@@ -45,4 +45,22 @@ body {
     display: flex;
     justify-content: center;
     color: #40DE63;
+}
+
+.tituloEsquerdo {
+    max-width: 210px;
+}
+
+.ladoEsquerdo {
+    margin: 35px 30px;
+}
+
+.ladoEsquerdo a {
+    text-decoration: none;
+    color: #02b82a;
+}
+
+.ladoEsquerdo img {
+   max-width:150px;
+
 }

@@ -59,3 +59,8 @@ body {
     text-decoration: none;
     color: #02b82a;
 }
+
+.ladoEsquerdo img {
+   max-width:150px;
+
+}

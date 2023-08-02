@@ -1,3 +1,7 @@
+body {
+    display: flex;
+    justify-content: center;
+}
 
 .titulo, .modelos {
     display: flex;
@@ -22,4 +26,13 @@
 #finalizado {
     border: 1px solid green;
     color: green;
+}
+
+.main {
+    padding: 20px;   
+    border-radius: 20px;
+    box-shadow: 
+        5px 5px 10px green,
+        -5px -5px 10px red,
+        0px 0px 30px orange;
 }
