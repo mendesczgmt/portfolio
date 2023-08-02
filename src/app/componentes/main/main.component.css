@@ -1,0 +1,25 @@
+
+.titulo, .modelos {
+    display: flex;
+    justify-content: center;
+}
+
+.modelos > .modelo {
+    margin: 10px;
+    padding: 10px;
+}
+
+#naoIniciado {
+   border: 1px solid red;
+   color: red;
+}
+
+#emAndamento {
+    border: 1px solid orange;
+    color: orange;
+}
+
+#finalizado {
+    border: 1px solid green;
+    color: green;
+}

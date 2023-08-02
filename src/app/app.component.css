@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+.cabecalho, .footer {
+    height: 10vh;
+}
+
+.main {
+    display: grid;
+    min-height: 70vh;
+}
