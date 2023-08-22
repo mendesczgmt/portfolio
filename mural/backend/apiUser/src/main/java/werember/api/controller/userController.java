@@ -1,12 +1,11 @@
 package werember.api.controller;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import werember.api.user.DadosCadastroUser;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.*;
+import werember.api.user.DadosListagemUsuarios;
 import werember.api.user.UserRepository;
 import werember.api.user.Usuario;
 
@@ -16,8 +15,14 @@ public class userController {
     @Autowired
     private UserRepository repository;
     @PostMapping
-    public void cadastrar(@RequestBody DadosCadastroUser dados) {
+    @Transactional
+    public void cadastrar(@RequestBody werember.api.user.DadosCadastroUser dados) {
       repository.save(new Usuario(dados));
+    }
+
+    @GetMapping
+    public Page<DadosListagemUsuarios> listar(Pageable paginacao) {
+      return repository.findAll(paginacao).map(DadosListagemUsuarios::new);
     }
 
 }
