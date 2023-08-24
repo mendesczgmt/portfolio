@@ -38,7 +38,8 @@ public class userController {
     @DeleteMapping("/{id}")
     @Transactional
     public void excluir(@PathVariable Long id) {
-      repository.deleteById(id);
+      Usuario usuario = repository.getReferenceById(id);
+      usuario.excluir();
     }
 
 }

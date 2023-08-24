@@ -21,11 +21,13 @@ public class Usuario {
     private String usuario;
     private String email;
     private String senha;
+    private boolean ativo;
 
     public Usuario(DadosCadastroUser dados) {
       this.usuario = dados.usuario();
       this.email = dados.email();
       this.senha = dados.senha();
+      this.ativo = true;
     }
 
     public void atualizarDados(@Valid DadosAtualizaUser dados) {
@@ -40,5 +42,9 @@ public class Usuario {
       if(dados.senha() != null) {
         this.senha = dados.senha();
       }
+    }
+
+    public void excluir() {
+      this.ativo = false;
     }
 }
