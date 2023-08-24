@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import lombok.*;
 
 @Table(name="users")
@@ -25,5 +26,19 @@ public class Usuario {
       this.usuario = dados.usuario();
       this.email = dados.email();
       this.senha = dados.senha();
+    }
+
+    public void atualizarDados(@Valid DadosAtualizaUser dados) {
+      if(dados.email() != null) {
+        this.email = dados.email();
+      }
+
+      if(dados.usuario() != null) {
+        this.usuario = dados.usuario();
+      }
+
+      if(dados.senha() != null) {
+        this.senha = dados.senha();
+      }
     }
 }
