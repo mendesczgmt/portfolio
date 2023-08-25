@@ -25,7 +25,7 @@ public class userController {
 
     @GetMapping
     public Page<DadosListagemUsuarios> listar(Pageable paginacao) {
-      return repository.findAll(paginacao).map(DadosListagemUsuarios::new);
+      return repository.findAllByAtivoTrue(paginacao).map(DadosListagemUsuarios::new);
     }
 
     @PutMapping
